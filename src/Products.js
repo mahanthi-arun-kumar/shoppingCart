@@ -20,7 +20,6 @@ export class Products extends Component {
             </li>
           ))} */}
           {this.props.products.map((product) => {
-            console.log(product);
             return (
               <li key={product._id}>
                 <div className="product">
@@ -30,7 +29,7 @@ export class Products extends Component {
                   </a>
                   <div className="product-price">
                     <div>{product.price}</div>
-                    <button className="btn primary">Add To Cart</button>
+                    <button onClick={()=>this.props.addToCart(product)} className="btn primary">Add To Cart</button>
                   </div>
                 </div>
               </li>
